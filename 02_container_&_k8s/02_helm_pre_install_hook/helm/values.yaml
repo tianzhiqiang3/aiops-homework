@@ -1,0 +1,28 @@
+vote:
+  image: dockersamples/examplevotingapp_vote
+  tag: latest
+
+worker:
+  image: dockersamples/examplevotingapp_worker
+  tag: latest
+
+result:
+  image: dockersamples/examplevotingapp_result
+  tag: latest
+
+redis:
+  enable: true
+  fullnameOverride: redis
+  auth: 
+    enabled: false
+
+postgresql-ha:
+  enable: true
+  fullnameOverride: db
+  global:
+    postgresql:
+      username: postgres
+      password: postgres
+      database: postgres
+      repmgrUsername: postgres
+      repmgrPassword: postgres
